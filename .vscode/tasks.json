@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build SFML project",
+        "type": "shell",
+        "command": "/usr/bin/g++",  // or the path to your compiler
+        "args": [
+          "-std=c++17",               // Use the appropriate C++ standard
+          "${workspaceFolder}/main.cpp",  // Path to your main source file
+          "-o", "${workspaceFolder}/main",  // Output file
+          "-I/opt/homebrew/Cellar/sfml/3.0.0/include",  // Include path for SFML
+          "-L/opt/homebrew/Cellar/sfml/3.0.0/lib",  // Library path for SFML
+          "-lsfml-graphics",  // Link SFML graphics
+          "-lsfml-window",    // Link SFML window
+          "-lsfml-system",    // Link SFML system
+          "-lsfml-audio",     // Link SFML audio
+          "-lsfml-network"    // Link SFML network
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Custom build task for SFML project"
+      }
+    ]
+  }
+  
